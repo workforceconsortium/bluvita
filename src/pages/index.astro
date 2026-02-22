@@ -1,17 +1,125 @@
----
+<style>
+  :root{
+    --navy:#0A1A2F;
+    --gold:#D4AF37;
+    --spode:#1F4E8C; /* subtle only */
+    --ink:#EDEFF3;
+    --muted:rgba(237,239,243,.78);
+    --line:rgba(212,175,55,.28);
+  }
 
----
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: radial-gradient(1200px 600px at 20% 20%, rgba(31,78,140,.12), transparent 55%),
+                radial-gradient(900px 500px at 80% 70%, rgba(212,175,55,.10), transparent 60%),
+                var(--navy);
+    color:var(--ink);
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+  }
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  .wrap{
+    width:min(980px, 92vw);
+    padding: 84px 28px;
+    text-align:center;
+  }
+
+  .brand{
+    font-size: clamp(44px, 7vw, 78px);
+    letter-spacing: .12em;
+    margin:0 0 18px 0;
+    font-weight: 700;
+  }
+
+  .tag{
+    font-size: clamp(16px, 2.2vw, 22px);
+    line-height: 1.35;
+    margin:0 auto 48px auto;
+    color:var(--muted);
+    max-width: 820px;
+  }
+
+  .goldline{
+    width: 120px;
+    height: 2px;
+    margin: 18px auto 0 auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.9;
+  }
+
+  .choices{
+    display:flex;
+    justify-content:center;
+    gap: 18px;
+    flex-wrap:wrap;
+    margin-top: 8px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding: 16px 22px;
+    border-radius: 999px;
+    text-decoration:none;
+    font-size: 18px;
+    letter-spacing:.02em;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    min-width: 170px;
+  }
+
+  .btn.primary{
+    color: var(--navy);
+    background: linear-gradient(180deg, #F1D890, var(--gold));
+    box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  }
+
+  .btn.secondary{
+    color: var(--ink);
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+
+  .btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 48px rgba(0,0,0,.40);
+  }
+
+  .hint{
+    margin-top: 26px;
+    font-size: 13px;
+    color: rgba(237,239,243,.55);
+    letter-spacing:.04em;
+  }
+
+  /* subtle spode detail - not floral */
+  .spodebar{
+    width: min(520px, 86vw);
+    height: 1px;
+    margin: 26px auto 0 auto;
+    background: linear-gradient(90deg, transparent, rgba(31,78,140,.55), transparent);
+  }
+</style>
+
+<div class="wrap">
+  <h1 class="brand">BLUVITA</h1>
+
+  <p class="tag">
+    Structured Corporate &amp; Refined Private Events<br/>
+    Delivered to Meet Your Expectations
+  </p>
+
+  <div class="goldline"></div>
+
+  <div class="choices">
+    <a class="btn primary" href="/corporate">Corporate</a>
+    <a class="btn secondary" href="/private">Private</a>
+  </div>
+
+  <div class="spodebar"></div>
+</div>
